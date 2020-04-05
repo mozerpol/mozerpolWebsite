@@ -1,186 +1,167 @@
 <!doctype html>
 <!-- quiz-orm/templates/szkielet.html -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-    <meta name="description" content="asdf1234"/> 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
-	<meta name="author" content="Mozerpol">
-	
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel="stylesheet">  
-	 <!--awesomefonts-->  
-	<link rel="stylesheet" 
-	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
-	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
-	crossorigin="anonymous">
-        
-    <!-- Optional theme -->
-    <link rel="stylesheet"
-     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-     crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-        
-    <title>{% block tytul %}{% endblock %} &#8211; {{ config.TYTUL }}</title>
-  </head>
-  <body>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      NAVBAR      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+        <meta name="author" content="Mozerpol">
+        <meta name="description" content="Twoj stary"/> 
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" 
+        rel="stylesheet">  
+        <!--awesomefonts-->  
+        <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+        crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='szkieletStyle.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        {% block headStyle %}{% endblock %}
+        <title>{% block tytul %}{% endblock %} &#8211; {{ config.TYTUL }}</title>
+    </head>
+    <body>
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      NAVBAR      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
         <header>
-	    {% set navigation_bar = [
-            ('/', 'index', 'Strona główna'),
-            ('/menu/lista', 'lista', 'Lista'),
-            ('/menu/quiz', 'quiz', 'Quiz'),
-            ('/menu/dodaj', 'dodaj', 'Dodaj pytania'),
-            ('/menu/usun', 'usun', 'Usun pytania'),
-            ('/menu/edytuj', 'edytuj', 'Edytuj pytania'),
+            {% set navigation_bar = [
+            ('/', 'index', 'STRONA GLOWNA'),
+            ('/menu/lista', 'lista', 'LISTA'),
+            ('/menu/quiz', 'quiz', 'QUIZ'),
+            ('/menu/dodaj', 'dodaj', 'DODAJ PYTANIA'),
+            ('/menu/usun', 'usun', 'USUN PYTANIA'),
+            ('/menu/edytuj', 'edytuj', 'EDYTUJ PYTANIA'),
             ] %}
-        {% set active_page = active_page|default('index') %}
+            {% set active_page = active_page|default('index') %}
             <nav id="header-container" class="navbar justify-content-center navbar-dark navbar-expand-md" role="navigation">
-		    <!--
-			    navbar - klasa, ktora tworzy navbar. Sama w sobie nie pozwala na jakies wieksze dzialanie (np. chowanie paska)
-			    justify-content-center - wyposrodowanie w poziomie.
-			    navbar-dark - kolor belki nawigacyjnej, a dokladniej tekstu. Mozna zmienic w css na dowolny lub tutaj na navbar-light.
-			    navbar-expand-md - dzieki temu ponizej rozmiaru medium pojawi sie przycisk rozwijania menu (ktory ustawiony jest ponizej, jako navbar-toggler)
-			    role="navigation" - taki punkt orientacyjny dla czytnikow i innych gowien. Nie uzywalem w projekcie, ale moze warto.
-			    Zasieg div: Tytul, navbar z ewewntualna lupka i wysowanym second-nav-submit.
-		    -->
-			    <div id="site-header" class="row justify-content-center align-items-center -webkit-align-items: center h-100">
-			    <!--
-				    align-items-center - wyposrodkowanie w pionie.
-				    -webkit-align-items: center - przegladarka safari jest na tyle biedacka, ze trzeba dla niej uzywac specjalnych klas. Ta robi to co align-items-center
-				    h-100 - jak uzywamy align-items-center to trzeba powiedziec ile ten pion diva ma miec wysokosci, czy 100%, a moze 50%? Dzieki h-100 ustawiamy wyoskość 100%
-				    justify-content-center - opisane w div header-container.
-				    Zasieg: wlasciwie to samo co powyzszy div header-container.
-			    -->
-				    <div class="navbar-header">
-					    <a class="navbar-brand" href="#" style="font-weight: 800; margin-right: 0px; ">LOREM IPSUM</a>
-					    <!--
-						    navbar-header - klasa bootstrap, w ktorej miesci sie logo, nazwa firmy itp. Ogolnie sama klasa nie spelnia jakichs wiekszych funkcji. Wysrodkowuje to co sie 
-						    w niej znajduje[?]
-						    navbar-brand - Klasa stosowana do oznaczania loga firmy (moze byc ono tekstowe lub inne).
-					    -->
-				    </div>
-				    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainmenu">
-				    <!--
-					    navbar-toggler - sa to te trzy poziome kreski, rozwijane menu, ktore sie pokazuja przy malej szerokosci ekranu.
-					    ml-auto - to jest to samo co "margin-left: auto"
-					    type="button" - dzieki temu nie nie wysylamy zadnego submitu, to jest zwykly przycisk.
-					    data-toggle="collapse" - wlaczenie mechanizmu zapadania sie menu.
-					    data-target="#mainmenu" - gdzie w dokumencie znajduje sie to co ma ulec collapsowi, jako wartosc tego atrybutu trzeba podac identyfikator tej zawartosci. Uzywamy 
-					    znaku #, bo uzywamy id.
-				    -->
-					    <span class="navbar-toggler-icon"></span> <!-- navbar-toggler-icon - dzieki tej klasie przycisk ma trzy poziome kreski, okreslamy jego wyglad -->
-				    </button>
-				    <div class="collapse navbar-collapse w-100" id="mainmenu">
-				    <!--
-					    collapse - ustalamy miedzy granicamy tej klasy co ma byc w rozwijanym menu (chyba)
-					    navbar-collapse -
-					    w-100 - ustalamy jak szeroko na ekran ma "rozlac" sie div. w-100 oznacza 100%.
-				    -->
-					    <ul class="navbar-nav nav-fill w-100">
-					    <!--
-						    navbar-nav - klasa dzieki ktorej wyswietla sie menu, pasek nawigacyjny. Umozliwia rowniez uzycie mechanizmu collapse
-						    nav-fill - dzieki temu menu 'rozlewa' sie na cala szerokosc ekranu
-					    -->
+                <!--
+                navbar - klasa, ktora tworzy navbar. Sama w sobie nie pozwala na jakies wieksze dzialanie (np. chowanie paska)
+                justify-content-center - wyposrodowanie w poziomie.
+                navbar-dark - kolor belki nawigacyjnej, a dokladniej tekstu. Mozna zmienic w css na dowolny lub tutaj na navbar-light.
+                navbar-expand-md - dzieki temu ponizej rozmiaru medium pojawi sie przycisk rozwijania menu (ktory ustawiony jest ponizej, jako navbar-toggler)
+                role="navigation" - taki punkt orientacyjny dla czytnikow i innych gowien. Nie uzywalem w projekcie, ale moze warto.
+                Zasieg div: Tytul, navbar z ewewntualna lupka i wysowanym second-nav-submit.
+                -->
+                <div id="site-header" class="row justify-content-center align-items-center -webkit-align-items: center h-100">
+                    <!--
+                    align-items-center - wyposrodkowanie w pionie.
+                    -webkit-align-items: center - przegladarka safari jest na tyle biedacka, ze trzeba dla niej uzywac specjalnych klas. Ta robi to co align-items-center
+                    h-100 - jak uzywamy align-items-center to trzeba powiedziec ile ten pion diva ma miec wysokosci, czy 100%, a moze 50%? Dzieki h-100 ustawiamy wyoskość 100%
+                    justify-content-center - opisane w div header-container.
+                    Zasieg: wlasciwie to samo co powyzszy div header-container.
+                    -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" style="font-weight: 800; margin-right: 0px; ">LOREM IPSUM</a>
+                        <!--
+                        navbar-header - klasa bootstrap, w ktorej miesci sie logo, nazwa firmy itp. Ogolnie sama klasa nie spelnia jakichs wiekszych funkcji. Wysrodkowuje to co sie 
+                        w niej znajduje[?]
+                        navbar-brand - Klasa stosowana do oznaczania loga firmy (moze byc ono tekstowe lub inne).
+                        -->
+                    </div>
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainmenu">
+                        <!--
+                        navbar-toggler - sa to te trzy poziome kreski, rozwijane menu, ktore sie pokazuja przy malej szerokosci ekranu.
+                        ml-auto - to jest to samo co "margin-left: auto"
+                        type="button" - dzieki temu nie nie wysylamy zadnego submitu, to jest zwykly przycisk.
+                        data-toggle="collapse" - wlaczenie mechanizmu zapadania sie menu.
+                        data-target="#mainmenu" - gdzie w dokumencie znajduje sie to co ma ulec collapsowi, jako wartosc tego atrybutu trzeba podac identyfikator tej zawartosci. Uzywamy 
+                        znaku #, bo uzywamy id.
+                        -->
+                        <span class="navbar-toggler-icon"></span> <!-- navbar-toggler-icon - dzieki tej klasie przycisk ma trzy poziome kreski, okreslamy jego wyglad -->
+                    </button>
+                    <div class="collapse navbar-collapse w-100" id="mainmenu">
+                        <!--
+                        collapse - ustalamy miedzy granicamy tej klasy co ma byc w rozwijanym menu (chyba)
+                        navbar-collapse -
+                        w-100 - ustalamy jak szeroko na ekran ma "rozlac" sie div. w-100 oznacza 100%.
+                        -->
+                        <ul class="navbar-nav nav-fill w-100">
+                            <!--
+                            navbar-nav - klasa dzieki ktorej wyswietla sie menu, pasek nawigacyjny. Umozliwia rowniez uzycie mechanizmu collapse
+                            nav-fill - dzieki temu menu 'rozlewa' sie na cala szerokosc ekranu
+                            -->
                             {% for href, id, tekst in navigation_bar %}
-                              <li class="nav-item"{% if id == active_page %} class="active"{% endif %}>
+                            <li class="nav-item"{% if id == active_page %} class="active"{% endif %}>
                                 <a href="{{ href|e }}">{{ tekst|e }}</a>
-                              </li>
+                            </li>
                             {% endfor %}
-						    <button onclick="showSecondNav()" class="fas fa-search"></button>
-						    <!--
-							    Ten button odpowiada za przycisk lupki, po jego wcisnieciu uruchamiamy skrypt JS showSecondNav
-							    fas - klasa mowiaca jak wypelniona ma byc lupka z fontawesome. Sa inne wypelnienia, np fab
-							    fa-search - klasa z fontawesome, ktora oznacza lupke
-						    -->
-						    <form class="form-inline">
-							    <input class="form-control  col-8" type="search" placeholder="Search..." aria-label="Search">
-							    <button class="btn btn-outline-success col-4" type="submit">Szukaj</button>
-						    <!--
-							    form-inline - dodaje sie ta klase tylko do elementu form. W niej umieszcza sie formularze, kontrolki itp.
-							    form-control - https://stackoverflow.com/questions/31739685/what-is-a-form-control-in-html
-						    -->
-						    </form>
-					    </ul>
-				    </div> <!-- Koniec div class="collapse navbar-collapse" id="mainmenu"-->
-			    </div> <!--  site-header -->
-		    </nav> <!--  header-container -->
-		    <nav id="second-nav" class="navbar navbar-dark navbar-expand-md">
-			    <form class="form-inline">
-				    <input id="second-nav-searcher" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-				    <button id="second-nav-submit" class="btn btn-outline-success" type="submit">Szukaj</button>
-			    </form>
-		    </nav>
+                            <button onclick="showSecondNav()" class="fas fa-search"></button>
+                            <!--
+                            Ten button odpowiada za przycisk lupki, po jego wcisnieciu uruchamiamy skrypt JS showSecondNav
+                            fas - klasa mowiaca jak wypelniona ma byc lupka z fontawesome. Sa inne wypelnienia, np fab
+                            fa-search - klasa z fontawesome, ktora oznacza lupke
+                            -->
+                            <form class="form-inline">
+                                <input class="form-control  col-8" type="search" placeholder="Search..." aria-label="Search">
+                                <button class="btn btn-outline-success col-4" type="submit">Szukaj</button>
+                                <!--
+                                form-inline - dodaje sie ta klase tylko do elementu form. W niej umieszcza sie formularze, kontrolki itp.
+                                form-control - https://stackoverflow.com/questions/31739685/what-is-a-form-control-in-html
+                                -->
+                            </form>
+                        </ul>
+                    </div> <!-- Koniec div class="collapse navbar-collapse" id="mainmenu"-->
+                </div> <!--  site-header -->
+            </nav> <!--  header-container -->
+            <nav id="second-nav" class="navbar navbar-dark navbar-expand-md">
+                <form class="form-inline">
+                    <input id="second-nav-searcher" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button id="second-nav-submit" class="btn btn-outline-success" type="submit">Szukaj</button>
+                </form>
+            </nav>
         </header>
-        
-        
-        
+
         <div class="row">
-        <div class="col-md-12">
-          <h1>{% block h1 %}{% endblock %}</h1>
+            <div class="col-md-12">
+                <h1>{% block h1 %}{% endblock %}</h1>
+                {% with komunikaty = get_flashed_messages(with_categories=true) %}
+                {% if komunikaty %}
+                <div id="komunikaty" class="well">
+                    {% for kategoria, komunikat in komunikaty %}
+                    <span class="{{ kategoria }}">{{ komunikat }}</span><br>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <div id="tresc" class="cb">
+                    {% block tresc %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div> <!-- /row -->
 
-          {% with komunikaty = get_flashed_messages(with_categories=true) %}
-          {% if komunikaty %}
-          <div id="komunikaty" class="well">
-            {% for kategoria, komunikat in komunikaty %}
-              <span class="{{ kategoria }}">{{ komunikat }}</span><br>
-            {% endfor %}
-          </div>
-          {% endif %}
-          {% endwith %}
-
-          <div id="tresc" class="cb">
-          {% block tresc %}
-          {% endblock %}
-          </div>
-
-        </div>
-      </div> <!-- /row -->
-        
-        
-        
-        
-        
-        
-    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
-	crossorigin="anonymous"></script>
-	<!-- jQuery CDN -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-	crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script> 
-    <!-- ponizszy skrypt odpowiada za ukrywanie i pokazywanie menu po kliknieciu na lupke, ktora pokazuje sie dopiero przy odpowiedniej rozdzielczosci strony.  -->
-	<script>
-		function showSecondNav()
-		{
-			var x = document.getElementById('second-nav-searcher');
-			if (x.style.display === 'block') //dzieki zmianie wlasnosci wyswietlania diva <form class="form-inline"> istnieje mozliwosc pokazywania i chowania go
-			{
-				document.getElementById('second-nav-searcher').style.display = "none"; //schowaj pole do szukania
-				document.getElementById('second-nav-submit').style.display = "none"; //schowaj pole "szukaj"
-			} else {
-					document.getElementById('second-nav-searcher').style.display = "block";
-					document.getElementById('second-nav-submit').style.display = "block";
-			}
-		}
-	</script>
-  </body>
+        <script type="text/javascript" 
+        src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+        crossorigin="anonymous"></script>
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script> 
+        <!-- ponizszy skrypt odpowiada za ukrywanie i pokazywanie menu po kliknieciu na lupke, ktora pokazuje sie dopiero przy odpowiedniej rozdzielczosci strony.  -->
+        <script>
+            function showSecondNav()
+            {
+                var x = document.getElementById('second-nav-searcher');
+                if (x.style.display === 'block') //dzieki zmianie wlasnosci wyswietlania diva <form class="form-inline"> istnieje mozliwosc pokazywania i chowania go
+                {
+                    document.getElementById('second-nav-searcher').style.display = "none"; //schowaj pole do szukania
+                    document.getElementById('second-nav-submit').style.display = "none"; //schowaj pole "szukaj"
+                } else {
+                    document.getElementById('second-nav-searcher').style.display = "block";
+                    document.getElementById('second-nav-submit').style.display = "block";
+                }
+            }
+        </script>
+    </body>
 </html>
