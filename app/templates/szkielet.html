@@ -39,7 +39,15 @@
   
       <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      NAVBAR      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
         <header>
-        
+	    {% set navigation_bar = [
+            ('/', 'index', 'Strona główna'),
+            ('/menu/lista', 'lista', 'Lista'),
+            ('/menu/quiz', 'quiz', 'Quiz'),
+            ('/menu/dodaj', 'dodaj', 'Dodaj pytania'),
+            ('/menu/usun', 'usun', 'Usun pytania'),
+            ('/menu/edytuj', 'edytuj', 'Edytuj pytania'),
+            ] %}
+        {% set active_page = active_page|default('index') %}
             <nav id="header-container" class="navbar justify-content-center navbar-dark navbar-expand-md" role="navigation">
 		    <!--
 			    navbar - klasa, ktora tworzy navbar. Sama w sobie nie pozwala na jakies wieksze dzialanie (np. chowanie paska)
@@ -87,30 +95,11 @@
 						    navbar-nav - klasa dzieki ktorej wyswietla sie menu, pasek nawigacyjny. Umozliwia rowniez uzycie mechanizmu collapse
 						    nav-fill - dzieki temu menu 'rozlewa' sie na cala szerokosc ekranu
 					    -->
-
-						    <li class="nav-item active">
-						    <!--
-							    nav-item - mowi ze to jest element listy w nawigajcji
-							    active - dynamiczna pseudo-klasa
-							    dzieki active podswietla nam sie pozycja w menu w ktorej aktualnie jestesmy
-						    -->
-							    <a id="home" class="nav-link"> HOME </a> <!-- nav-link -  -->
-						    </li>
-						    <li class="nav-item">
-							    <a class="nav-link" href="#white-credo-container"> O&nbsp;STRONIE </a> <!-- &nbsp; - twarda spacja, juz nie chcialo mi sie szukac innego rozwiazania -->
-						    </li>
-						    <li class="nav-item">
-							    <a class="nav-link" href="./artykul/artykul.html"> ELEKTRONIKA </a>
-						    </li>
-						    <li class="nav-item">
-							    <a class="nav-link"> PROGRAMOWANIE </a>
-						    </li>
-						    <li class="nav-item">
-							    <a class="nav-link"> JEDZENIE </a>
-						    </li>
-						    <li class="nav-item">
-							    <a class="nav-link"> INNE </a>
-						    </li>
+                            {% for href, id, tekst in navigation_bar %}
+                              <li class="nav-item"{% if id == active_page %} class="active"{% endif %}>
+                                <a href="{{ href|e }}">{{ tekst|e }}</a>
+                              </li>
+                            {% endfor %}
 						    <button onclick="showSecondNav()" class="fas fa-search"></button>
 						    <!--
 							    Ten button odpowiada za przycisk lupki, po jego wcisnieciu uruchamiamy skrypt JS showSecondNav
@@ -136,6 +125,36 @@
 			    </form>
 		    </nav>
         </header>
+        
+        
+        
+        <div class="row">
+        <div class="col-md-12">
+          <h1>{% block h1 %}{% endblock %}</h1>
+
+          {% with komunikaty = get_flashed_messages(with_categories=true) %}
+          {% if komunikaty %}
+          <div id="komunikaty" class="well">
+            {% for kategoria, komunikat in komunikaty %}
+              <span class="{{ kategoria }}">{{ komunikat }}</span><br>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% endwith %}
+
+          <div id="tresc" class="cb">
+          {% block tresc %}
+          {% endblock %}
+          </div>
+
+        </div>
+      </div> <!-- /row -->
+        
+        
+        
+        
+        
+        
     <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
 	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
