@@ -9,7 +9,7 @@
 	width: 100%;
 }
 
-#mainmenu > .navbar-nav > .active
+#mainmenu > .ul > .li
 {
 	border: 1px solid white; /* kiedy jest przypisana klasa active to element menu ma biala ramke*/
 }

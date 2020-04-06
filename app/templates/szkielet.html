@@ -30,12 +30,12 @@
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      NAVBAR      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
         <header>
             {% set navigation_bar = [
-            ('/', 'index', 'STRONA GLOWNA'),
-            ('/menu/lista', 'lista', 'LISTA'),
-            ('/menu/quiz', 'quiz', 'QUIZ'),
-            ('/menu/dodaj', 'dodaj', 'DODAJ PYTANIA'),
-            ('/menu/usun', 'usun', 'USUN PYTANIA'),
-            ('/menu/edytuj', 'edytuj', 'EDYTUJ PYTANIA'),
+            ('/', 'index', 'HOME'),
+            ('/menu/lista', 'lista', 'O STRONIE'),
+            ('/menu/quiz', 'quiz', 'ELEKTRONIKA'),
+            ('/menu/dodaj', 'dodaj', 'PROGRAMOWANIE'),
+            ('/menu/usun', 'usun', 'JEDZENIE'),
+            ('/menu/edytuj', 'edytuj', 'INNE'),
             ] %}
             {% set active_page = active_page|default('index') %}
             <nav id="header-container" class="navbar justify-content-center navbar-dark navbar-expand-md" role="navigation">
@@ -86,8 +86,8 @@
                             nav-fill - dzieki temu menu 'rozlewa' sie na cala szerokosc ekranu
                             -->
                             {% for href, id, tekst in navigation_bar %}
-                            <li class="nav-item"{% if id == active_page %} class="active"{% endif %}>
-                                <a href="{{ href|e }}">{{ tekst|e }}</a>
+                            <li class="nav-item" {% if id == active_page %} class="active" style="border: 1px solid white;" {% endif %}>
+                                <a href="{{ href|e }}" style="color: rgba(255,255,255,.5); line-height: 350%;">{{ tekst|e }}</a>
                             </li>
                             {% endfor %}
                             <button onclick="showSecondNav()" class="fas fa-search"></button>
@@ -116,10 +116,8 @@
             </nav>
         </header>
 
-        <div id="tresc" class="cb">
-            {% block tresc %}
-            {% endblock %}
-        </div>
+        {% block tresc %}{% endblock %}
+        
         <!-- bootstrap.bundle.min.js -->
         <script type="text/javascript" 
         src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
