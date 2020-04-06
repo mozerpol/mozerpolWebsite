@@ -1,12 +1,81 @@
 <!-- quiz2sa/templates/index.html -->
 {% extends "szkielet.html" %}
 {% block tytul %}Strona główna{% endblock%}
-{% block h1 %}Strona &#8211; Glowna{% endblock%}
+{% block headStyle %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='indexStyle.css') }}">{% endblock %}
 {% block tresc %}
-    <p>
-        Jakas<br />
-        Tresc
-    </p>
+	<main>
+		<div class="container-fluid">
+		<!--
+			container-fluid - jest to ...
+			Zakres klasy:
+		-->
+			<div class="row">
+				<div id="first-page-container"> <!-- Zakres div ... -->
+					<div id="carouselExampleIndicators" class="carousel slide col-xl-6 col-lg-10 col-md-12" data-ride="carousel">
+					<!--
+						carousel -
+						slide -
+						col-xl-6 col-lg-10 col-md-12 - ustawienie szerokosci karuzeli w zaleznosci od aktualnej rozdzielczosci
+						data-ride="carousel" -
+					-->
+					<ol class="carousel-indicators"> <!-- carousel-indicators -->
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block w-100" src="{{url_for('static', filename='/img/jeden.png')}}" alt="First slide"/>
+								<!--
+									 carousel-inner -
+									 carousel-item -
+									 d-block -
+									 alt="First slide" -
+								-->
+							</div>
+							<div class="carousel-item">
+							    <img class="d-block w-100" src="{{url_for('static', filename='/img/dwa.png')}}" alt="Second slide"/>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="{{url_for('static', filename='/img/trzy.png')}}" alt="Third slide"/>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="{{url_for('static', filename='/img/cztery.png')}}" alt="Second slide"/>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="{{url_for('static', filename='/img/piec.png')}}" alt="Second slide"/>
+							</div>
+						</div>
+					</div> <!-- koniec carousleExampleIndicators -->
+				 </div> <!-- first-page-container -->
+			</div> <!-- koniec row -->
+<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: WHITE CREDO ::::::::::::::::::::::::::::::::::::: -->
+			<div class="row">
+				<div id="white-credo-container">
+					<div id="white-credo-container-title">O STRONIE</div>
+				</div> <!--  klasy white-credo-container -->
+			</div> <!--  klasy row -->
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  CREDO CONTAINER ::::::::::::::::::::::::::::::::::::: -->
+			<div class="row">
+				<div id="credo-container">
+				<div id="second-background-offer-container" class="box">
+					<div style="font-weight: 400; text-align: center; color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit magna, suscipit vel lorem in,</br> fringilla convallis ex. Praesent vel mi nibh. Cras condimentum lorem et ultricies pretium. Nunc eu gravida urna. </br>Suspendisse tincidunt ex in auctor congue. </br>Nulla facilisi. Nam nunc purus, interdum sit amet enim at, volutpat sagittis magna.
+					</div>
+					<div id="footer-container">
+						<div id="footer-border">
+							</br>
+							<i class="fas fa-pen-nib"></i>&nbsp;&nbsp;  Autor : <i>Mozerpol</i></br>
+							<i class="far fa-envelope"></i>&nbsp;&nbsp; Kontakt : <i>mozerpol@protonmail.com</i></br></br>
+						</div>
+					</div>
+				</div> <!--  klasy second-background-offer-container -->
+				</div> <!--  klasy credo-container -->
+			</div> <!--  klasy row -->
+		</div> <!--  container-fluid -->
+	</main>
 {% endblock %}
 
 
