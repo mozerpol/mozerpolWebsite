@@ -1,0 +1,416 @@
+#header-container /*Pojemnik na tytul, logo, menu i pasek szukania i lupke, ktora aktywuje szukanie*/
+{
+	font-family: 'Raleway';
+	background-color: #202020; /*szare tlo, prawie czarne*/
+}
+/* #site-header - Pojemnik na tytul, logo, menu i pasek szukania, tak jak wyzej. Niestety dwa pojemniki maja  taki sam zakres, a wynika to z tego, ze w pierwszym uzywamy klasy navbar, przy ktorej nie moge dac klasy row, bo wszystko sie rozjedza. Moze flex jest rozwiazaniem, ale nie chce mi sie bawic, dziala :) */
+#site-header
+{
+	width: 100%;
+}
+
+#mainmenu > .navbar-nav > .active
+{
+	border: 1px solid white; /* kiedy jest przypisana klasa active to element menu ma biala ramke*/
+}
+
+ul > li /*dotyczy glownych elementow menu, np elektronika, inne, programwoanie...*/
+{
+	line-height: 250%; /*ile miejsca w pione zajmuje jedna linia tekstu z listy numerowanej*/
+}
+
+ul > li:hover /*co sie dzieje po najechaniu na elementy menu*/
+{
+	font-weight:bold;
+}
+
+#second-nav /*ustawienie wyszukiwarki po kliknieciu w lupke*/
+{
+	background-color: #202020;
+}
+
+#second-nav > form > input, #mainmenu > ul > form > input /* wystylizowanie paska szukania dla glownego menu i tego dodatkowego po wcisnieciu w lupke*/
+{
+	border-color: #808080; /* kolor obramowania paska szukania*/
+	background-color: #202020; /*dzieki temu pasek szukania ma taki kolor tla jak cale tlo diva*/
+	color: white; /*kolor tekstu*/
+	border-radius: 0px; /* domyslnie wlaczone jest zaokraglanie krawedzi marginesow, to wylacza ten mechanizm */
+	letter-spacing: 2px; /*rozstrzelenie liter*/
+	font-size: 1.8vh;
+}
+
+#second-nav > form  > button, #mainmenu > ul > form > button /* wystylizowanie buttona 'szukaj' dla glownego menu i tego dodatkowego po wcisnieciu w lupke */
+{
+	border-color: #808080;
+	color: #808080;
+	border-radius: 0px;
+	letter-spacing: 2px;
+	font-size: 1.8vh;
+}
+
+#second-nav > form  > button:hover, #mainmenu > ul > form > button:hover /* co sie dzieje po najechaniu myszka na button szukaj*/
+{
+	background-color: #202020;
+	font-weight: bold;
+	color: white;
+}
+
+#mainmenu > ul > button /* wystylizowanie lupki*/
+{
+	color: #808080; /*kolor ma taki jaki byc powinien :) */
+	font-size: 2vw;
+	margin: auto;
+	background: rgba(0, 0, 0, 0); /* zalaczenie przezroczystoscu tla, dla lupki. Bez tego jest ona na takim malym bialym kwadracie */
+	border: none;
+}
+
+@media (max-width: 499px)
+{
+	#footer-border
+	{
+		font-size: 3.5vw;
+	}
+}
+
+@media (max-width: 475px)
+{
+	#mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
+	{
+		width: auto;
+		font-size: 3vw;
+		letter-spacing: 3px;
+	}
+	#mainmenu > ul > li
+	{
+		font-size: 3vw;
+		width: auto;
+		letter-spacing: 4px;
+	}
+
+	#mainmenu > ul > i, #second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
+	{
+		display: none;
+	}
+}
+@media (min-width: 476px) and (max-width: 767px)
+{
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
+	{
+		font-size: 14px;
+		width: auto;
+		letter-spacing: 4px;
+	}
+	#mainmenu > ul > i, #second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
+	{
+		display: none;
+	}
+}
+@media (min-width: 768px) and (max-width: 999px)
+{
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
+	{
+		font-size: 1.7vw;
+		width: auto;
+		letter-spacing: 4px;
+	}
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > form > input, #mainmenu > ul > form > button
+	{
+		display: none;
+	}
+}
+@media (min-width: 1000px) and (max-width: 1299px)
+{
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
+	{
+		font-size: 1.3vw;
+		width: auto;
+		letter-spacing: 4px;
+	}
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > form > input, #mainmenu > ul > form > button
+	{
+		display: none;
+	}
+}
+@media (min-width: 1300px) and (max-width: 1599px)
+{
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
+	{
+		font-size: 1vw;
+		width: auto;
+		letter-spacing: 4px;
+	}
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > i, #mainmenu > ul > button
+	{
+		display: none;
+	}
+}
+@media (min-width: 1600px)
+{
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
+	{
+		font-size: 15px;
+		width: auto;
+		letter-spacing: 4px;
+	}
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > i, #mainmenu > ul > button
+	{
+		display: none;
+	}
+}
+#second-nav-searcher
+{
+	width: 200px;
+}
+#second-nav-searcher:focus
+{
+	transition: width 500ms linear;
+	width: 500px;
+}
+
+@media (max-width: 2000px)
+{
+	.navbar-header > a
+	{
+		font-size:  120px;
+	}
+}
+@media (max-width: 1400px)
+{
+	.navbar-header > a
+	{
+		font-size:  8.5vw;
+	}
+}
+
+#article-container
+{
+	background-color: #252523;
+	width: 100%;
+	height: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#article-container-second-background
+{
+	background-color: #303030;
+	width: 80%;
+	height: 100%;
+	border-radius: 20px;
+}
+@media (max-width: 770px)
+{
+	#article-container-second-background
+	{
+		border-radius: 0px;
+	}
+}
+
+#title-container
+{
+	width: 80%;
+	height: auto;
+	font-weight: 800;
+	font-family: 'Times New Roman';
+	color: white;
+	text-align: center;
+	font-size:  3.5vw;
+	border-bottom: 4px solid white;
+	margin-bottom: 8%;
+}
+
+@media (max-width: 750px)
+{
+	#title-container
+	{
+		font-size: 8.5vw;
+	}
+}
+@media (min-width: 751px)
+{
+	#title-container
+	{
+		 font-size: 65px;
+	}
+}
+
+article
+{
+	color: white;
+	text-align: justify;
+	font-family: 'Verdana';
+	margin-bottom: 10%;
+}
+
+@media (max-width: 450px)
+{
+	article
+	{
+		font-size: 15px;
+	}
+}
+
+#data
+{
+	 text-align: right;
+	 font-family: 'Raleway';
+	 font-size: 5vw;
+}
+
+@media (min-width: 500px)
+{
+	#data
+	{
+		 font-size: 25px;
+	}
+}
+
+#comments-container
+{
+	width: 100%;
+	height: auto;
+	background-color: #252525;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10%;
+}
+
+@media (max-width: 770px)
+{
+	#comments
+	{
+		border-radius: 0px!important;
+	}
+}
+
+.w3-button
+{
+	border: none;
+	padding: 8px 16px;
+	margin-bottom: 2%;
+	color: white;
+	background-color: inherit;
+	background-color: #404040;
+	border-radius: 6px;
+}
+.w3-button:hover
+{
+	font-weight:bold;
+}
+
+.w3-hide
+{
+	display: none;
+}
+.w3-show
+{
+	display: block;
+	margin: 5%;
+}
+
+#comments
+{
+	border-radius: 20px;
+	width: 80%;
+	height: auto;
+	background-color: #303030;
+	display: flex;
+	flex-direction: column;
+	color: white;
+}
+
+#comment-title
+{
+	font-weight: 400;
+	width: 80%;
+	height: auto;
+	font-family: 'Times New Roman';
+	text-align: center;
+	font-size:  3.5vw;
+	border-bottom: 4px solid white;
+	align-self: center;
+	margin-bottom: 5%;
+	padding-bottom: 1%;
+}
+
+@media (max-width: 750px)
+{
+	#comment-title
+	{
+		font-size: 6.5vw;
+	}
+}
+@media (min-width: 751px)
+{
+	#comment-title
+	{
+		 font-size: 50px;
+	}
+}
+
+.single-comment
+{
+	color: white;
+	height: auto;
+	width: 70%;
+	margin: auto;
+	border-radius: 10px;
+	border: 1px solid #808080;
+	margin-bottom: 5%;
+	text-align: justify;
+	padding: 2%;
+	font-family: 'Verdana';
+	font-size: 15px;
+}
+
+.nick
+{
+	font-size: 18px;
+	font-weight:bold;
+}
+.comment-data
+{
+	font-size: 18px;
+	font-weight:bold;
+}
+
+#add-comment-form > .nick > input
+{
+	width: 15%;
+	letter-spacing: 1px;
+	background-color: #303030;
+	border: 1px solid #808080;
+	color: white;
+	border-radius: 5px;
+
+}
+
+#add-comment-container
+{
+	height: auto;
+	width: auto;
+}
+
+#footer-container
+{
+	width: 100%;
+	height: auto;
+	background-color: #252525;
+	font-weight: 400;
+	font-size: 16px;
+	text-align: left;
+	color: white;
+	display: flex;
+	justify-content: center;
+}
+#footer-border
+{
+	border-radius: 10px;
+	width: 85%;
+	border-top: 2px solid white;
+	background-color: #303030;
+}
+
