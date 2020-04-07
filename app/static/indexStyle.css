@@ -22,21 +22,21 @@
 
 @media (min-width: 900px) 
 { 
-	#second-background-offer-container
+	#second-background-offer-container /* Wystylizowanie tekstu, tam gdzie Stallman jest */
 	{
 		font-size: 1.5vw;
 	}
 }
 @media (min-width: 500px) and (max-width: 899px)  
 { 
-	#second-background-offer-container
+	#second-background-offer-container /* Wystylizowanie tekstu, tam gdzie Stallman jest */
 	{
 		font-size: 2.5vw;
 	}
 }
 @media (max-width: 499px) 
 { 
-	#second-background-offer-container, #footer-border
+	#second-background-offer-container, #footer-border /* Wystylizowanie tekstu, tam gdzie Stallman jest i stopka ;p*/
 	{
 		font-size: 3.5vw;
 	}
@@ -44,130 +44,20 @@
 
 @media (min-width: 400px) 
 { 
-	#white-credo-container-title
+	#white-credo-container-title /* Wystylizowanie napisu "O STRONIE", nad Stallmanem */
 	{
 		font-size: 4vw;
 	}
 }
 @media (max-width: 399px) 
 { 
-	#white-credo-container-title
+	#white-credo-container-title /* Wystylizowanie napisu "O STRONIE", nad Stallmanem */
 	{
 		font-size: 6.5vw;
 	}
 }
 
-@media (max-width: 475px)
-{ 
-	#mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
-	{
-		width: auto;
-		font-size: 3vw;
-		letter-spacing: 3px;
-	}
-	#mainmenu > ul > li
-	{
-		font-size: 3vw;
-		width: auto;
-		letter-spacing: 4px;
-	}
-	
-	#mainmenu > ul > i, #second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
-	{
-		display: none;
-	}
-}	
-@media (min-width: 476px) and (max-width: 767px) 
-{
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
-	{
-		font-size: 14px;
-		width: auto;
-		letter-spacing: 4px;
-	}
-	#mainmenu > ul > i, #second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
-	{
-		display: none;
-	}
-}
-@media (min-width: 768px) and (max-width: 999px) 
-{
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
-	{
-		font-size: 1.7vw;
-		width: auto;
-		letter-spacing: 4px;
-	}
-	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > form > input, #mainmenu > ul > form > button
-	{
-		display: none;
-	}
-}
-@media (min-width: 1000px) and (max-width: 1299px) 
-{
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
-	{
-		font-size: 1.3vw;
-		width: auto;
-		letter-spacing: 4px;
-	}
-	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > form > input, #mainmenu > ul > form > button
-	{
-		display: none;
-	}
-}
-@media (min-width: 1300px) and (max-width: 1599px) 
-{
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
-	{
-		font-size: 1vw;
-		width: auto;
-		letter-spacing: 4px;
-	}
-	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > i, #mainmenu > ul > button
-	{
-		display: none;
-	}
-}
-@media (min-width: 1600px)
-{
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
-	{
-		font-size: 15px;
-		width: auto;
-		letter-spacing: 4px;
-	}
-	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > i, #mainmenu > ul > button
-	{
-		display: none;
-	}
-}
-#second-nav-searcher
-{
-	width: 200px;
-}
-#second-nav-searcher:focus
-{
-	transition: width 500ms linear;
-	width: 500px;
-}
-
-@media (max-width: 2000px) 
-{ 
-	.navbar-header > a
-	{
-		font-size:  120px;
-	}
-}
-@media (max-width: 1400px) 
-{ 
-	.navbar-header > a
-	{
-		font-size:  8.5vw;
-	}
-}
-
-#white-credo-container
+#white-credo-container /* Wystylizowanie div'a, ktory jest miedzy karuzela (tymi slajdami), a div'em ze Stallmanem */
 {
 	font-weight: 800;
 	text-align: center; 
@@ -186,7 +76,7 @@
 	min-height: 170px;
 }
 
-#credo-container
+#credo-container /* div ze Stallmanem i ze stopka */
 { 
 	width: 100%;
 	height: 100vh;
@@ -211,7 +101,7 @@
 	flex-wrap: wrap;
 	min-height: 568px;
 }
-.box :nth-child(1) 
+.box :nth-child(1) /* Dzieki zastosowaniu flex, mamy mozliwosc ustawienia kolejnosci, na gorze jest div ze stallmanem, a na dole stopka  */
 { 
 	order: 1; 
 	align-self: center;
@@ -223,7 +113,7 @@
 	align-self: flex-end;
 }
 
-#footer-container
+#footer-container /* stopka */
 {
 	width: 100%;
 	height: auto;
@@ -232,11 +122,10 @@
 	font-size: 16px;
 	text-align: left; 
 	color: white;
-	/*background-image: linear-gradient(#808080, #202020);*/
 	display: flex; 
 	justify-content: center;
 }
-#footer-border
+#footer-border /* dzieki temu jest biala linia przy stopce */
 {	
 	width: 85%;
 	border-top: 2px solid white;

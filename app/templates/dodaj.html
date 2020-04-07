@@ -1,9 +1,7 @@
-<!-- quiz2sa/templates/dodaj.html -->
 {% extends "szkielet.html" %}
 {% set active_page = "dodaj" %}
-{% block tytul %}Dodawanie{% endblock%}
-{% block h1 %}Quiz 2 &#8211; dodawanie pytań{% endblock%}
-{% block tresc %}
+{% block pageTitle %}Dodawanie{% endblock%}
+{% block contentBlock %}
     <form method="POST" class="add-form" action="{{ url_for('menu.dodaj') }}">
         <label>Wpisz pytanie:</label><br />
         {% if pytanie %}

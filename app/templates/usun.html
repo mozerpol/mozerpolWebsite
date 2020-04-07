@@ -1,9 +1,7 @@
-<!-- quiz2sa/templates/edytuj.html -->
 {% extends "szkielet.html" %}
 {% set active_page = "usun" %}
-{% block tytul %}Usun{% endblock%}
-{% block h1 %}Quiz 2 &#8211; usuwanie pytań{% endblock%}
-{% block tresc %}
+{% block pageTitle %}Usun{% endblock%}
+{% block contentBlock %}
     <!-- pętla odczytująca kolejne pytania z listy -->
     <ol>
     {% for p in pytania %}

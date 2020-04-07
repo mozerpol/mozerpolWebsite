@@ -9,11 +9,6 @@
 	width: 100%;
 }
 
-#mainmenu > .ul > .li
-{
-	border: 1px solid white; /* kiedy jest przypisana klasa active to element menu ma biala ramke*/
-}
-
 ul > li /*dotyczy glownych elementow menu, np elektronika, inne, programwoanie...*/
 {
 	line-height: 250%; /*ile miejsca w pione zajmuje jedna linia tekstu z listy numerowanej*/
@@ -66,40 +61,40 @@ ul > li:hover /*co sie dzieje po najechaniu na elementy menu*/
 
 @media (max-width: 475px)
 { 
-	#mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
+	#mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn /* form-control, btn - search i szukaj w menu */
 	{
 		width: auto;
 		font-size: 3vw;
 		letter-spacing: 3px;
 	}
-	#mainmenu > ul > li
+	#mainmenu > ul > li /* Wystylizowanie tekstu w menu (w sensie home, elektronika, programowanie itp. */
 	{
 		font-size: 3vw;
 		width: auto;
 		letter-spacing: 4px;
 	}
 	
-	#mainmenu > ul > i, #second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button /* second-nav - pasek nawigacji, ktory pojawia sie po wcisnieciu lupki oraz sama lupka */ 
 	{
 		display: none;
 	}
 }	
 @media (min-width: 476px) and (max-width: 767px) 
 {
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn /* ul > li, form-control, btn - tekst w menu, przycisk szukaj i formularz do szukania */
 	{
 		font-size: 14px;
 		width: auto;
 		letter-spacing: 4px;
 	}
-	#mainmenu > ul > i, #second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button /* second-nav - pasek nawigacji, ktory pojawia sie po wcisnieciu lupki oraz sama lupka */ 
 	{
 		display: none;
 	}
 }
 @media (min-width: 768px) and (max-width: 999px) 
 {
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn /* ul > li, form-control, btn - tekst w menu, przycisk szukaj i formularz do szukania */
 	{
 		font-size: 1.7vw;
 		width: auto;
@@ -107,12 +102,13 @@ ul > li:hover /*co sie dzieje po najechaniu na elementy menu*/
 	}
 	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > form > input, #mainmenu > ul > form > button
 	{
+		/* second-nav - pasek szukaj i jego przycisk, ktory pokazuje sie w menu przy odpowiedniej rozdzielczosci. Tutaj ma sie nie pokazywac. mainmenu, input, button - pasek szukaj i 			jego przycisk */
 		display: none;
 	}
 }
 @media (min-width: 1000px) and (max-width: 1299px) 
 {
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn /* ul > li, form-control, btn - tekst w menu, przycisk szukaj i formularz do szukania */
 	{
 		font-size: 1.3vw;
 		width: auto;
@@ -120,55 +116,56 @@ ul > li:hover /*co sie dzieje po najechaniu na elementy menu*/
 	}
 	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > form > input, #mainmenu > ul > form > button
 	{
+		/* second-nav - pasek szukaj i jego przycisk, ktory pokazuje sie w menu przy odpowiedniej rozdzielczosci. Tutaj ma sie nie pokazywac. mainmenu, input, button - pasek szukaj i 			jego przycisk */
 		display: none;
 	}
 }
 @media (min-width: 1300px) and (max-width: 1599px) 
 {
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn, #mainmenu > ul > i
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn /* ul > li, form-control, btn - tekst w menu, przycisk szukaj i formularz do szukania */
 	{
 		font-size: 1vw;
 		width: auto;
 		letter-spacing: 4px;
 	}
-	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > i, #mainmenu > ul > button
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button 
 	{
-		display: none;
+		display: none; /* second-nav - pasek szukaj i jego przycisk, ktory pokazuje sie w menu przy odpowiedniej rozdzielczosci. mainmenu - przycisk lupki */
 	}
 }
 @media (min-width: 1600px)
 {
-	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn
+	#mainmenu > ul > li, #mainmenu > ul > form > .form-control, #mainmenu > ul > form > .btn /* ul > li, form-control, btn - tekst w menu, przycisk szukaj i formularz do szukania */
 	{
 		font-size: 15px;
 		width: auto;
 		letter-spacing: 4px;
 	}
-	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > i, #mainmenu > ul > button
+	#second-nav > form > input, #second-nav > form  > button, #mainmenu > ul > button
 	{
-		display: none;
+		display: none; /* second-nav - pasek szukaj i jego przycisk, ktory pokazuje sie w menu przy odpowiedniej rozdzielczosci. mainmenu - przycisk lupki */
 	}
 }
-#second-nav-searcher
+#second-nav-searcher /* Po wcisnieciu lupki pojawia sie pasek szukaj i jego przycisk, ustalenie szerokosci tego paska szukaj. */
 {
 	width: 200px;
 }
-#second-nav-searcher:focus
+#second-nav-searcher:focus  /* Po wcisnieciu lupki pojawia sie pasek szukaj i jego przycisk. Po najechaniu na pasek szukaj jest jego mini animacja, w sensie poszerzenie sie. */
 {
 	transition: width 500ms linear;
 	width: 500px;
 }
 
-@media (max-width: 2000px) 
+@media (max-width: 2000px)
 { 
-	.navbar-header > a
+	.navbar-header > a /* stylizacja tytulu strony, no tego glownego */
 	{
-		font-size:  120px;
+		font-size:  120px; 
 	}
 }
 @media (max-width: 1400px) 
 { 
-	.navbar-header > a
+	.navbar-header > a /* stylizacja tytulu strony, no tego glownego */
 	{
 		font-size:  8.5vw;
 	}

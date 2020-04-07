@@ -1,9 +1,7 @@
-<!-- quiz2sa/templates/edytuj.html -->
 {% extends "szkielet.html" %}
 {% set active_page = "edytuj" %}
-{% block tytul %}Edycja{% endblock%}
-{% block h1 %}Quiz 2 &#8211; edycja pytań{% endblock%}
-{% block tresc %}
+{% block pageTitle %}Edycja{% endblock%}
+{% block contentBlock %}
     <!-- pętla odczytująca kolejne pytania z listy -->
     <ol>
     {% for p in pytania %}
