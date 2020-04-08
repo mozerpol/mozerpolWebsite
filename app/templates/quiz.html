@@ -1,112 +1,18 @@
-{% extends "mainTemplate.html" %}
+{% extends "articleTemplate.html" %}
 {% set active_page = "quiz" %}
 {% block pageTitle %}Ogolnie to quiz ;p{% endblock%}
 
-{% block headBlock %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quizStyle.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
-    <!-- trzy ponizsze skrypty sa dla summernote. Ogolnie mega dziwna sprawa i taka srednia ;/ Bo w szkielet.html juz laduje skrypt 3.4.1.slim.min.js, ale tutaj musze jeszcze raz, bo
-    inaczej summer note nie dziala. W sensie jak nie dam tutaj i w szkielet.html to summernote nie dziala :(-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
-    crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
-	<script>
-	function myFunction(id)
-	{
-	  var x = document.getElementById(id);
-	  if (x.className.indexOf("w3-show") == -1)
-	  {
-		x.className += " w3-show";
-	  } else
-	  {
-		x.className = x.className.replace(" w3-show", "");
-	  }
-	}
-	</script>
-{% endblock %}
+{% block articleTitle %}Lorem ipsum dolor sit amet, consectetur adipiscing elit{% endblock %}
 
-{% block contentBlock %}
-	<main>
-		<div class="container-fluid">
-			<div class="row">
-					<div id="article-container">
-					<div id="article-container-second-background">
-						<div class="row justify-content-center">
-							<div id="title-container">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit <br/>
-								<div id="data"> 29 maja 2019</div>
-							</div>
-							<article class=" col-xl-8 col-lg-9 col-md-10 col-sm-11 col-11">
+{% block articleDate %}29 maja 2019{% endblock %}
+
+{% block articleContent %}
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales est vel justo varius fringilla. Donec iaculis posuere lacus, id pellentesque ipsum fringilla ullamcorper. Maecenas a rhoncus tellus. Nam auctor laoreet enim nec malesuada. Nunc efficitur aliquet quam, sed facilisis ante faucibus ac. Aliquam dictum leo risus, tincidunt facilisis sem euismod egestas. Nullam finibus et elit at dapibus. Vestibulum tincidunt commodo nulla nec commodo. In interdum risus ut tortor malesuada, et rutrum tellus fermentum. Nunc in neque tortor. Fusce et massa mi. Vestibulum feugiat vel diam nec porta. Donec dapibus iaculis lorem, sit amet varius felis imperdiet ut. In quis est velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales est vel justo varius fringilla. Donec iaculis posuere lacus, id pellentesque ipsum fringilla ullamcorper. Maecenas a rhoncus tellus. Nam auctor laoreet enim nec malesuada. Nunc efficitur aliquet quam, sed facilisis ante faucibus ac. Aliquam dictum leo risus, tincidunt facilisis sem euismod egestas. Nullam finibus et elit at dapibus. Vestibulum tincidunt commodo nulla nec commodo. In interdum risus ut tortor malesuada, et rutrum tellus fermentum. Nunc in neque tortor. Fusce et massa mi. Vestibulum feugiat vel diam nec porta. Donec dapibus iaculis lorem, sit amet varius felis imperdiet ut. In quis est velit.
-							</article>
-						</div>
-					</div>
-					</div>
-			</div> <!-- koniec row -->
-<!--:::::::::::::::::::::::::::::::::::::::::komentarze:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
-			<div class="row">
-				<div id="comments-container">
-					<div id="comments" class="box">
-						<div id="comment-title"> KOMENTARZE </div>
-						<div class="single-comment">
-							<div class="nick">jakis_tam</div>
-							<div class="comment-data">22.02.18</div><br/>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales ut tortor malesuada, et rutrum tellus fermentum. Nunc in neque tortor. Fusce et massa mi. Vestibulum feugiat vel diam nec porta. Donec dapibus iaculis lorem, sest vel justo varius fringilla
-						</div>
-						<div class="single-comment">
-							<div class="nick">endrju</div>
-							<div class="comment-data">23.03.19</div><br/>
-							In interdum risus ut tortor malesuada, et ruut tortor malesuada, et rutrum tellus fermentum. Nunc in neque tortor. Fusce et massa mi. Vestibulum feugiat vel diam nec porta. Donec dapibus iaculis lorem, strum tellus fermentum.
-						</div>
-						<div id="add-comment-container" style="text-align: center;">
-							<button onclick="myFunction('add-comment-form')" class="w3-button">DODAJ POST</button>
-							<div id="add-comment-form" style="text-align: left;" class="w3-hide">
-								<div class="nick" style="font-weight: normal; letter-spacing: 1px;">
-									Wpisz nick:
-									<input type="text" name="nickname" value="Anonim">
-								</div> <br/>
-								<div id="summernote"></div>
-								<script>
-								  $('#summernote').summernote({
-									tabsize: 6,
-									height: 300,
-									minHeight: null,             // set minimum height of editor
-									maxHeight: null,             // set maximum height of editor
-									focus: true,                  // set focus to editable area after initializing summernote
-
-									toolbar: [
-										// [groupName, [list of button]]. Wiecej: https://summernote.org/deep-dive/
-										['style', ['bold', 'italic', 'underline', 'strikethrough']],
-										['font', ['superscript', 'subscript']],
-										['fontname', ['fontname']],
-										['fontsize', ['fontsize']],
-										['color', ['color']],
-										['para', ['ul', 'ol', 'paragraph']],
-										['insert', ['link', 'picture', 'video']],
-										['view', ['fullscreen']],
-									]
-								  });
-								</script>
-								<div style="margin-top: 4%; text-align: center;"> <button class="w3-button">WYŚLIJ</button></div>
-							</div> <!-- koniec add-comment-form -->
-						</div> <!-- koniec add-comment-container -->
-					</div> <!-- koniec comments -->
-				</div> <!-- koniec comments-container -->
-			</div> <!--  klasy row -->
-
-<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  CREDO CONTAINER ::::::::::::::::::::::::::::::::::::: -->
-			<div class="row">
-				<div id="footer-container">
-					<div id="footer-border">
-						</br>
-						<i class="fas fa-pen-nib"></i>&nbsp;&nbsp;  Autor : <i>Mozerpol</i></br>
-						<i class="far fa-envelope"></i>&nbsp;&nbsp; Kontakt : <i>mozerpol@protonmail.com</i></br></br>
-					</div>
-				</div>
-			</div> <!--  klasy row -->
-		</div> <!--  container-fluid -->
-	</main>
 {% endblock %}
+
+{% block commentsNick %}jakisNick{% endblock %}
+{% block commentsDate %}22.02.18{% endblock %}
+{% block commentsContent %}
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales ut tortor malesuada, et rutrum tellus fermentum. Nunc in neque tortor. Fusce et massa mi. Vestibulum feugiat vel diam nec porta. Donec dapibus iaculis lorem, sest vel justo varius fringilla
+{% endblock %}
+
