@@ -1,11 +1,4 @@
-@media (max-width: 499px)
-{
-	#footer-border
-	{
-		font-size: 3.5vw;
-	}
-}
-#article-container
+#article-container /* Div nadrzedny dla tytulu artykulu, daty i tekstu. W tym divie znajduje sie drugi, mniejszy o jasniejszym szarnym kolorze */
 {
 	background-color: #252523;
 	width: 100%;
@@ -17,7 +10,7 @@
 	align-items: center;
 }
 
-#article-container-second-background
+#article-container-second-background /* Div nadrzedny dla tytulu artykulu, daty i tekstu. W tym divie znajduje sie drugi, mniejszy o jasniejszym szarnym kolorze */
 {
 	background-color: #303030;
 	width: 80%;
@@ -32,7 +25,7 @@
 	}
 }
 
-#title-container
+#title-container /* Stylizacja div'a w ktorym znajduje sie tytul artykulu. */
 {
 	width: 80%;
 	height: auto;
@@ -60,7 +53,7 @@
 	}
 }
 
-article
+article /* Stylizacja tagu html, w ktorym znajduje sie tekst artykulu */
 {
 	color: white;
 	text-align: justify;
@@ -76,7 +69,7 @@ article
 	}
 }
 
-#data
+#data /* data artykulu */
 {
 	 text-align: right;
 	 font-family: 'Raleway';
@@ -109,7 +102,7 @@ article
 	}
 }
 
-.w3-button
+.w3-button /* Stylizacja klasy, ktora odopwiada przyciskowi 'dodaj post' i 'wyslij' */
 {
 	border: none;
 	padding: 8px 16px;
@@ -236,4 +229,10 @@ article
 	border-top: 2px solid white;
 	background-color: #303030;
 }
-
+@media (max-width: 499px)
+{
+	#footer-border
+	{
+		font-size: 3.5vw;
+	}
+}

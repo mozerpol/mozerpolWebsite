@@ -23,7 +23,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mainTemplateStyle.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
         {% block headBlock %}{% endblock %}
-        <title>{% block pageTitle %}{% endblock %} &#8211; {{ config.TYTUL }}</title>
+        <title>{% block pageTitle %}{% endblock %} {{ config.TYTUL }}</title>
     </head>
     <body>
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::      NAVBAR      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
