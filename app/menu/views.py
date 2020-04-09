@@ -9,7 +9,7 @@ from .. import db  # import bazy danych. Sa dwie kropki, poniewaz zawiera sie
 from ..models import Pytanie, Odpowiedz
 
 
-@menu.route('/lista', methods=['GET', 'POST'])  # menu - bo znajdujemy sie w tym
+@menu.route('/categories', methods=['GET', 'POST'])  # menu - bo znajdujemy sie w tym
 # folderze?
 def lista():
     # GET, wyświetl pytania
@@ -18,7 +18,7 @@ def lista():
         flash(u'Brak pytań w bazie.', 'kom')
         return redirect(url_for('main.index'))
 
-    return render_template('lista.html', pytania=pytania.all())
+    return render_template('categories.html', pytania=pytania.all())
     
     
 @menu.route('/quiz', methods=['GET', 'POST'])
