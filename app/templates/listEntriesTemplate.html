@@ -1,5 +1,4 @@
 {% extends "mainTemplate.html" %}
-{% set active_page = "lista" %}
 {% block pageTitle %}{% endblock%}
 
 {% block headBlock %}
@@ -17,6 +16,9 @@
 							    {% block titleOfTheArticle %}{% endblock %}	
 							<br/>
 							</div>
+                            <article class=" col-xl-8 col-lg-9 col-md-10 col-sm-11 col-11">
+                                {% block articleContent %}{% endblock %}
+							</article>
 						</div>
 					</div>
 					</div>

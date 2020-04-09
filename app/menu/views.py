@@ -124,3 +124,8 @@ def edytuj():
         return render_template('programming.html', pytanie=pytanie)
 
     return render_template('edytuj.html', pytania=pytania.all())
+    
+
+@menu.route('/electronicsPost')
+def electronicsPost():
+    return render_template('electronicsPost.html')
