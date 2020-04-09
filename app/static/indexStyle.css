@@ -11,13 +11,13 @@
 
 #carouselMainPage /*odpowiada za karuzele i jej przelacznik, te piec poziomych kresek*/
 {
-	height: 30vh;
+	height: 80vh;
 	min-height: 170px;
 }
 .carousel-inner > .carousel-item /*ustawienie samego slidera*/
 {
-   width: 100%;
-   min-height: 100px;
+   min-height: 130px;
+   margin-bottom: 7%;
 }
 
 @media (min-width: 900px) 
