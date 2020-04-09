@@ -21,7 +21,7 @@ def lista():
     return render_template('categories.html', pytania=pytania.all())
     
     
-@menu.route('/quiz', methods=['GET', 'POST'])
+@menu.route('/electronics', methods=['GET', 'POST'])
 def quiz():
     # POST, sprawdź odpowiedzi
     if request.method == 'POST':
@@ -43,10 +43,10 @@ def quiz():
         flash(u'Brak pytań w bazie.', 'kom')
         return redirect(url_for('main.index'))
 
-    return render_template('quiz.html', pytania=pytania.all())
+    return render_template('electronics.html', pytania=pytania.all())
     
     
-@menu.route('/dodaj', methods=['GET', 'POST'])
+@menu.route('/programming', methods=['GET', 'POST'])
 def dodaj():
     error = []
     # POST, zapisz pytanie
@@ -93,7 +93,7 @@ def dodaj():
                 flash(e, 'blad')
 
     # GET, wyświetl formularz
-    return render_template('dodaj.html')
+    return render_template('programming.html')
     
 @menu.route('/usun', methods=['GET', 'POST'])
 def usun():
@@ -121,6 +121,6 @@ def edytuj():
     if request.method == 'POST':
         pid = request.form['id']
         pytanie = Pytanie.query.get(pid)
-        return render_template('dodaj.html', pytanie=pytanie)
+        return render_template('programming.html', pytanie=pytanie)
 
     return render_template('edytuj.html', pytania=pytania.all())
