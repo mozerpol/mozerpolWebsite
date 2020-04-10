@@ -17,6 +17,7 @@ ul > li /*dotyczy glownych elementow menu, np elektronika, inne, programwoanie..
 ul > li:hover /*co sie dzieje po najechaniu na elementy menu*/
 {
 	font-weight:bold;
+	color: rgba(255,255,255,.5);
 }
 
 #second-nav /*ustawienie wyszukiwarki po kliknieciu w lupke*/

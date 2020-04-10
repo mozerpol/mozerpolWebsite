@@ -1,0 +1,11 @@
+.categoryItem
+{
+    color: white;
+    letter-spacing: 3px;
+    padding: 2%;
+}
+.categoryItem:hover
+{
+    font-weight:bold;
+    padding: 1%;
+}
