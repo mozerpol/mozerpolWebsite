@@ -1,11 +1,71 @@
 {% extends "listEntriesTemplate.html" %}
 {% set active_page = "electronics" %}
 {% block pageTitle %}Elektronika{% endblock%}
+{% block headForCategories %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='electronicsStyle.css') }}">{% endblock %}
 
 {% block titleOfTheArticle %}Elektronika{% endblock %}
 
-{% block articleContent %}
-    <a href="/menu/electronicsPost">Post_1</a></br>
-    <a href="/menu/electronicsPost">Post_2</a></br>
-    <a href="/menu/electronicsPost">Post_3</a></br>
+{% block articleContent %}   
+<div class="row">
+    <div class="photo col-xl-3">
+        <img class="img-thumbnail" src="{{url_for('static', filename='/img/resistor.jpg')}}"/>
+    </div>      
+    <div class="post col-xl-9">
+	    <a href="/menu/electronicsPost">
+	        <h1>Tytul </h1> </br>
+	        <h6>Data </h6> </br>
+	        <h4>Opis </h4>
+		</a>
+    </div>   
+    <div class="photo col-xl-3">
+        <img class="img-thumbnail" src="{{url_for('static', filename='/img/resistor.jpg')}}"/>
+    </div>      
+    <div class="post col-xl-9">
+	    <a href="/menu/electronicsPost">
+	        Tytul</br>
+	        Data </br>
+	        Opis
+		</a>
+    </div>           
+    <div class="photo col-xl-3">
+        <img class="img-thumbnail" src="{{url_for('static', filename='/img/resistor.jpg')}}"/>
+    </div>      
+    <div class="post col-xl-9">
+	    <a href="/menu/electronicsPost">
+	        Tytul</br>
+	        Data </br>
+	        Opis
+		</a>
+    </div>           
+    <div class="photo col-xl-3">
+        <img class="img-thumbnail" src="{{url_for('static', filename='/img/resistor.jpg')}}"/>
+    </div>      
+    <div class="post col-xl-9">
+	    <a href="/menu/electronicsPost">
+	        Tytul</br>
+	        Data </br>
+	        Opis
+		</a>
+    </div>           
+    <div class="photo col-xl-3">
+        <img class="img-thumbnail" src="{{url_for('static', filename='/img/resistor.jpg')}}"/>
+    </div>      
+    <div class="post col-xl-9">
+	    <a href="/menu/electronicsPost">
+	        Tytul</br>
+	        Data </br>
+	        Opis
+		</a>
+    </div>           
+    <div class="photo col-xl-3">
+        <img class="img-thumbnail" src="{{url_for('static', filename='/img/resistor.jpg')}}"/>
+    </div>      
+    <div class="post col-xl-9">
+	    <a href="/menu/electronicsPost">
+	        Tytul</br>
+	        Data </br>
+	        Opis
+		</a>
+    </div>   
+</div>        
 {% endblock %}

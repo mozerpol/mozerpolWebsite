@@ -1,0 +1,16 @@
+.post, .photo
+{
+    margin-bottom: 2%;
+    color: white;
+}
+
+.post:hover, h6:hover, h1:hover, h4:hover
+{
+    font-weight:bold;
+}
+
+a:link
+{
+    text-decoration: none;
+    color: white;
+}
