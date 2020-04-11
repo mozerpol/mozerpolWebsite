@@ -87,6 +87,7 @@ article
 	width: 85%;
 	border-top: 2px solid white;
 	background-color: #303030;
+	padding-left: 1%;
 }
 @media (max-width: 499px)
 {

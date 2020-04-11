@@ -103,13 +103,11 @@
 }
 .box :nth-child(1) /* Dzieki zastosowaniu flex, mamy mozliwosc ustawienia kolejnosci, na gorze jest div ze stallmanem, a na dole stopka  */
 { 
-	order: 1; 
 	align-self: center;
 }
 
 .box :nth-child(2) 
 { 
-	order: 2; 
 	align-self: flex-end;
 }
 
@@ -129,4 +127,5 @@
 {	
 	width: 85%;
 	border-top: 2px solid white;
+	padding-left: 1%;
 }
