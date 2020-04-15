@@ -1,11 +1,71 @@
-.categoryItem
+.categoryItem /* klasa w ktorej miesci sie obrazek i jego tytul */
 {
     color: white;
     letter-spacing: 3px;
     padding: 2%;
+    /* border: 1px solid red; */
+    text-align: center;
 }
 .categoryItem:hover
 {
     font-weight:bold;
     padding: 1%;
+}
+
+@media(max-width: 500px)
+{
+    .categoryItem   /* klasa w ktorej miesci sie obrazek i jego podpis, ktory jest dopasowywany */
+    {
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 25px;
+    }
+    .imageThumbnail /* klasa, w ktorej znajduje sie obrazek */
+    {
+        width: 85px;
+        
+    }
+}
+
+@media(min-width: 501px) and (max-width: 1199px)
+{
+    .imageThumbnail /* klasa, w ktorej znajduje sie obrazek */
+    {
+        width: 100px;
+        
+    }
+    .categoryItem   /* klasa w ktorej miesci sie obrazek i jego tytul, ktory jest dopasowywany */
+    {
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 19px;
+    }
+}
+@media(min-width: 1200px) and (max-width: 1499px)
+{
+    .categoryItem   /* klasa w ktorej miesci sie obrazek i jego podpis, ktory jest dopasowywany */
+    {
+        font-size: 17px;
+        letter-spacing: 3px;
+        padding: 5%;
+    }
+    .imageThumbnail /* klasa, w ktorej znajduje sie obrazek */
+    {
+        width: 60%;
+        
+    }
+}
+@media(min-width: 1500px)
+{
+    .categoryItem   /* klasa w ktorej miesci sie obrazek i jego podpis, ktory jest dopasowywany */
+    {
+        font-size: 17px;
+        letter-spacing: 3px;
+        padding: 40px;
+    }
+    .imageThumbnail /* klasa, w ktorej znajduje sie obrazek */
+    {
+        width: 115px;
+        
+    }
 }

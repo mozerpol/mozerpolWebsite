@@ -7,26 +7,33 @@
 
 {% block articleContent %}
 <div class="row">
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios-filled/100/000000/drone.png" style="color: red;"/> Drony 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/drone.png')}}"/>
+        <figcaption>Drony</figcaption>
     </div>
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios/100/000000/electronics.png"/> Elektronika 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/electronics.png')}}"/>
+        <figcaption>Elektronika</figcaption>
     </div>
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios/100/000000/rv-campground.png"/> Podroze 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/rv-campground.png')}}"/>
+        <figcaption>Podroze</figcaption>
     </div>
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios/100/000000/international-food.png"/> Jedzenie 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/international-food.png')}}"/>
+        <figcaption>Jedzenie</figcaption>
     </div>
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios/100/000000/beer-bottle.png"/> Piwo 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/beer-bottle.png')}}"/>
+        <figcaption>Piwo</figcaption>
     </div>
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios/100/000000/laptop-coding.png"/> Programowanie 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/laptop-coding.png')}}"/>
+        <figcaption>Programowanie</figcaption>
     </div>
-    <div class="categoryItem col-xl-4">
-        <img src="https://img.icons8.com/ios/100/000000/formula-fx.png"/> Algorytmy 
+    <div class="categoryItem col-lg-4 col-6" >
+        <img class="imageThumbnail" src="{{url_for('static', filename='/img/category/formula-fx.png')}}"/>
+        <figcaption>Algorytmy</figcaption>
     </div>    
 </div>
 {% endblock %}
