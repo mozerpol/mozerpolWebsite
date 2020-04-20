@@ -1,10 +1,123 @@
+.photo
+{
+border: 1px solid red;
+}
+.post
+{
+	color: white;
+	border: 1px solid red;
+}
+.singlePost:hover
+{
+    font-weight:bold;
+}
+a:link
+{
+    text-decoration: none;
+    color: white;
+}
+@media(max-width: 390px)
+{
+	.img-thumbnail
+	{
+		width: 50%;
+	}
+	.photo
+	{
+		text-align: center;
+		margin-bottom: auto;
+	}
+	.posTitle
+	{
+		text-align: center;
+		font-size: 130%;
+		margin-bottom: 2%;
+	}
+	.postData
+	{
+		text-align: center;
+		font-size: 80%;
+		margin-bottom: 4%;
+	}
+	.post
+	{
+		margin-bottom: 15%;
+	}
+}
+@media(min-width: 391px) and (max-width: 600px)
+{
+	.img-thumbnail
+	{
+		width: 150px;
+	}
+	.photo
+	{
+		text-align: center;
+		margin-bottom: auto;
+		margin-top: 5%;
+	}
+	.posTitle
+	{
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}
+	.postData
+	{
+		text-align: center;
+		font-size: 15px;
+		margin-bottom: 4%;
+	}
+	.post
+	{
+		margin-bottom: 8%;
+	}
+}
+@media(min-width: 601px) and (max-width: 900px)
+{
+	.img-thumbnail
+	{
+		width: 150px;
+	}
+	.photo
+	{
+		text-align: center;
+		margin-bottom: auto;
+		margin-top: 7%;
+	}
+	.posTitle
+	{
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}
+	.postData
+	{
+		text-align: center;
+		font-size: 15px;
+		margin-bottom: 4%;
+	}
+	.post
+	{
+		margin-bottom: 10%;
+	}
+}
+
+/*
 .post, .photo
 {
     margin-bottom: 2%;
     color: white;
+    border: 1px solid red;
+    width: auto;
 }
 
-.post:hover, h6:hover, h1:hover, h4:hover
+.singlePost
+{
+    width: auto;
+}
+
+.singlePost:hover
 {
     font-weight:bold;
 }
@@ -14,3 +127,5 @@ a:link
     text-decoration: none;
     color: white;
 }
+
+*/
