@@ -19,7 +19,7 @@
 }
 @media (max-width: 770px)
 {
-	#article-container-second-background
+	#article-container-second-background /* To jest div o tym jasniejszym dzarym kolorze, tutaj znajduje sie bezposrednio artykul (data, tekst, tytul) */
 	{
 		border-radius: 0px;
 	}
@@ -84,7 +84,7 @@ article /* Stylizacja tagu html, w ktorym znajduje sie tekst artykulu */
 	}
 }
 
-#comments-container
+#comments-container /* div, w ktorym miesci sie napis 'KOMENTARZE', szare tlo i same komentarze */
 {
 	width: 100%;
 	height: auto;
@@ -92,6 +92,31 @@ article /* Stylizacja tagu html, w ktorym znajduje sie tekst artykulu */
 	display: flex;
 	justify-content: center;
 	padding-bottom: 10%;
+}
+
+#comments /* div, ktory jest od razu po div'ie comments-container. Miesci sie tutaj napis 'KOMENTARZE', szare tlo i same komentarze */
+{
+	border-radius: 20px;
+	width: 80%;
+	height: auto;
+	background-color: #303030;
+	display: flex;
+	flex-direction: column;
+	color: white;
+}
+
+#comment-title  /* Div dla napisu 'KOMENTARZE' */
+{
+	font-weight: 400;
+	width: 80%;
+	height: auto;
+	font-family: 'Times New Roman';
+	text-align: center;
+	font-size:  3.5vw;
+	border-bottom: 4px solid white;
+	align-self: center;
+	margin-bottom: 5%;
+	padding-bottom: 1%;
 }
 
 @media (max-width: 770px)
@@ -127,34 +152,9 @@ article /* Stylizacja tagu html, w ktorym znajduje sie tekst artykulu */
 	margin: 5%;
 }
 
-#comments
-{
-	border-radius: 20px;
-	width: 80%;
-	height: auto;
-	background-color: #303030;
-	display: flex;
-	flex-direction: column;
-	color: white;
-}
-
-#comment-title
-{
-	font-weight: 400;
-	width: 80%;
-	height: auto;
-	font-family: 'Times New Roman';
-	text-align: center;
-	font-size:  3.5vw;
-	border-bottom: 4px solid white;
-	align-self: center;
-	margin-bottom: 5%;
-	padding-bottom: 1%;
-}
-
 @media (max-width: 750px)
 {
-	#comment-title
+	#comment-title /* Div dla napisu 'KOMENTARZE' */
 	{
 		font-size: 6.5vw;
 	}
@@ -167,7 +167,7 @@ article /* Stylizacja tagu html, w ktorym znajduje sie tekst artykulu */
 	}
 }
 
-.single-comment
+.single-comment  /* klasa, w ktorej mieszcza sie komentarze, czyli jakis nick, data, komentarz itp. */
 {
 	color: white;
 	height: auto;
@@ -210,7 +210,7 @@ article /* Stylizacja tagu html, w ktorym znajduje sie tekst artykulu */
 	width: auto;
 }
 
-#footer-container
+#footer-container  
 {
 	width: 100%;
 	height: auto;
