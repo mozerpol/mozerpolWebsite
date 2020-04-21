@@ -1,0 +1,19 @@
+{% extends "greyBodyContainer.html" %}
+{% block headForCategories %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='listPosts.css') }}">{% endblock %}
+
+{% block articleContent %}
+<div class="row">
+{% for i in range(6) %}
+    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
+		<img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
+    </div>
+    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
+        <div class="singlePost">
+            <div class="posTitle"> {% block posTitle %}{% endblock %} </div>
+            <div class="postData"> {% block postData %}{% endblock %} </div>
+            <div class="postDes"> {% block postDes %}{% endblock %} </div>
+        </div>
+    </a>
+{% endfor %}
+</div> <!-- koniec div row -->  
+{% endblock %}

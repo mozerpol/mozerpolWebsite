@@ -1,71 +1,9 @@
-{% extends "greyBodyContainer.html" %}
+{% extends "listPosts.html" %}
 {% set active_page = "electronics" %}
 {% block pageTitle %}Elektronika{% endblock%}
-{% block headForCategories %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='electronicsStyle.css') }}">{% endblock %}
 
 {% block titleOfTheArticle %}Elektronika{% endblock %}
 
-{% block articleContent %}
-<div class="row">
-    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
-        <img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
-    </div>
-    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
-        <div class="singlePost">
-            <div class="posTitle"> Jakis dluzszy tytul </div>
-            <div class="postData"> 23 marca 2019 </div>
-            <div class="postDes"> No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie? </div>
-        </div>
-    </a>
-    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
-        <img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
-    </div>
-    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
-        <div class="singlePost">
-            <div class="posTitle"> Jakis dluzszy tytul </div>
-            <div class="postData"> 23 marca 2019 </div>
-            <div class="postDes"> No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie? </div>
-        </div>
-    </a>
-    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
-        <img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
-    </div>
-    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
-        <div class="singlePost">
-            <div class="posTitle"> Jakis dluzszy tytul </div>
-            <div class="postData"> 23 marca 2019 </div>
-            <div class="postDes"> No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie? </div>
-        </div>
-    </a>
-    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
-        <img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
-    </div>
-    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
-        <div class="singlePost">
-            <div class="posTitle"> Jakis dluzszy tytul </div>
-            <div class="postData"> 23 marca 2019 </div>
-            <div class="postDes"> No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie? </div>
-        </div>
-    </a>
-    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
-        <img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
-    </div>      
-    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
-        <div class="singlePost">
-            <div class="posTitle"> Jakis dluzszy tytul </div>
-            <div class="postData"> 23 marca 2019 </div>
-            <div class="postDes"> No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie? </div>
-        </div>
-    </a>
-    <div class="photo col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12" style="margin: 0 auto;">
-        <img class="img-thumbnail" src="{{url_for('static', filename='/img/electronics/resistor.jpg')}}"/>
-    </div>
-    <a href="/menu/electronicsPost" class="post col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12">
-        <div class="singlePost">
-            <div class="posTitle"> Jakis dluzszy tytul </div>
-            <div class="postData"> 23 marca 2019 </div>
-            <div class="postDes"> No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie? </div>
-        </div>
-    </a>
-</div> <!-- koniec div row -->  
-{% endblock %}
+{% block posTitle %}Jakis dluzszy tytul{% endblock %}
+{% block postData %}23 marca 2019{% endblock %}
+{% block postDes %}No tutaj cos sobie robie, nie wiem co, zobaczymy co bedzie w przyszlosci i takie taam, pozwoli mi to cos zrobic. Czy to jest jedno zdanie?{% endblock %}
