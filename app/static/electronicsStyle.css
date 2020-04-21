@@ -1,11 +1,6 @@
-.photo
-{
-border: 1px solid red;
-}
-.post
+.post /* Znajduje sie tutaj tekst, czyli tytul, data i opis */
 {
 	color: white;
-	border: 1px solid red;
 }
 .singlePost:hover
 {
@@ -18,62 +13,33 @@ a:link
 }
 @media(max-width: 390px)
 {
-	.img-thumbnail
+	.img-thumbnail /* Ikona przy poscie */
 	{
 		width: 50%;
 	}
-	.photo
+	.photo /* klasa, w ktorej miesci sie obrazek */
 	{
 		text-align: center;
 		margin-bottom: auto;
 	}
-	.posTitle
+	.posTitle /* klasa, w ktorej miesci sie tytul */
 	{
 		text-align: center;
 		font-size: 130%;
 		margin-bottom: 2%;
 	}
-	.postData
+	.postData /* klasa, w ktorej miesci sie data */
 	{
 		text-align: center;
 		font-size: 80%;
 		margin-bottom: 4%;
 	}
-	.post
+	.post /* klasa, w ktorej miesci sie opis postu */
 	{
 		margin-bottom: 15%;
 	}
 }
 @media(min-width: 391px) and (max-width: 600px)
-{
-	.img-thumbnail
-	{
-		width: 150px;
-	}
-	.photo
-	{
-		text-align: center;
-		margin-bottom: auto;
-		margin-top: 5%;
-	}
-	.posTitle
-	{
-		text-align: center;
-		font-size: 20px;
-		margin-bottom: 2%;
-	}
-	.postData
-	{
-		text-align: center;
-		font-size: 15px;
-		margin-bottom: 4%;
-	}
-	.post
-	{
-		margin-bottom: 8%;
-	}
-}
-@media(min-width: 601px) and (max-width: 900px)
 {
 	.img-thumbnail
 	{
@@ -97,35 +63,67 @@ a:link
 		font-size: 15px;
 		margin-bottom: 4%;
 	}
+	.post /* Znajduje sie tutaj tekst, czyli tytul, data i opis */
+	{
+		margin-bottom: 8%;
+	}
+}
+@media(min-width: 601px) and (max-width: 960px)
+{
+	.img-thumbnail
+	{
+		width: 160px;
+	}
+	.photo
+	{
+		text-align: center;
+		margin-bottom: auto;
+		margin-top: 7%;
+	}
+	.posTitle
+	{
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}
+	.postData
+	{
+		text-align: center;
+		font-size: 15px;
+		margin-bottom: 4%;
+	}
 	.post
 	{
-		margin-bottom: 10%;
+		margin-bottom: 8%;
+	}
+}
+@media(min-width: 961px)
+{
+	.img-thumbnail
+	{
+		width: 160px;
+	}
+	.photo
+	{
+		text-align: center;
+		margin-bottom: auto;
+		margin-top: 7%;
+	}
+	.posTitle
+	{
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}
+	.postData
+	{
+		text-align: center;
+		font-size: 15px;
+		margin-bottom: 4%;
+	}
+	.post
+	{
+		margin-bottom: 8%;
 	}
 }
 
-/*
-.post, .photo
-{
-    margin-bottom: 2%;
-    color: white;
-    border: 1px solid red;
-    width: auto;
-}
-
-.singlePost
-{
-    width: auto;
-}
-
-.singlePost:hover
-{
-    font-weight:bold;
-}
-
-a:link
-{
-    text-decoration: none;
-    color: white;
-}
-
-*/
