@@ -1,1 +1,16 @@
 {% extends "greyBodyContainer.html" %}
+{% block pageTitle %}Zaloguj{% endblock%}
+
+{% block titleOfTheArticle %}Logowanie{% endblock %}
+
+{% block articleContent %}
+
+<form class="col-xl-12" style="text-align: center; color: white;">
+    <label for="fname">Login:</label><br>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Haslo:</label><br>
+    <input type="password" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+</form> 
+
+{% endblock %}
