@@ -134,3 +134,8 @@ def electronicsPost():
 @menu.route('/loginPage')
 def loginPage():
     return render_template('loginPage.html')
+    
+        
+@menu.route('/managamentPage')
+def managamentPage():
+    return render_template('managamentPage.html')
