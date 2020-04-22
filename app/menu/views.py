@@ -129,3 +129,8 @@ def edytuj():
 @menu.route('/electronicsPost')
 def electronicsPost():
     return render_template('electronicsPost.html')
+    
+    
+@menu.route('/loginPage')
+def loginPage():
+    return render_template('loginPage.html')
