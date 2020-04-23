@@ -1,10 +1,50 @@
 {% extends "greyBodyContainer.html" %}
 {% block pageTitle %}Witaj nazwaUzytkownika{% endblock%}
-{% block headForCategories %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='managamentPageStyle.css.css') }}">{% endblock %}
+{% block headForCategories %}
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='managamentPageStyle.css') }}">
+	<script type="text/javascript">
+    function showDiv(id) 
+    { 
+        var x = document.getElementById(id);
+        if (x.style.display == "block")
+        {
+            x.style.display = "none"
+        } else
+        {
+            x.style.display = "block"
+        }
+    }
+  	</script>
+{% endblock %}
  
 {% block titleOfTheArticle %}Witaj nazwaUzytkownika{% endblock %}
 
 {% block articleContent %}
-<div class="row">
+<div class="row" style="color: white;">
+    
+    <button onclick="showDiv('addArticle')" class="col-xl-12">Dodaj artykul</button>
+    <div id="addArticle" style="display:none; color: white;"> 
+	    1. tytul <br>
+	    2. data <br>
+	    3. tagi/kategoria <br>
+	</div> <!-- koniec addArticle -->
+    <button onclick="showDiv('lastComment')" class="col-xl-12">Komentarze</button>
+    <div id="lastComment" style="display:none; color: white;"> 
+        1. gdzie pojawily sie komentarze i ile pod danym tematem <br>
+        2. wyczysc powiadomienia <br>
+	</div> <!-- koniec lastComment -->    
+    <button onclick="showDiv('checkStats')" class="col-xl-12">Statystyki</button>
+    <div id="checkStats" style="display:none; color: white;"> 
+        1. statystyki dot. kazdego z osobna artykulu (ile odwiedzin, komentarzy itp.) <br>
+        2. lacznie wejsc na strone <br>
+	</div> <!-- koniec checkStats -->        
+	<button onclick="showDiv('users')" class="col-xl-12">Uzytkownicy</button>
+    <div id="users" style="display:none; color: white;"> 
+        1. zablokuj IP <br>
+        2. lista blokowanych adresow <br>
+		3. nazwa uzytkownika <br>
+        4. uprawnienia uzytkownika <br>
+	</div> <!-- koniec checkStats -->  
 </div> <!-- koniec row -->
 {% endblock %}

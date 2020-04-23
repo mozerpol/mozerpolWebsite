@@ -4,8 +4,6 @@
 
 {% block headBlock %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='articleTemplateStyle.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
     <!-- trzy ponizsze skrypty sa dla summernote. Ogolnie mega dziwna sprawa i taka srednia ;/ Bo w szkielet.html juz laduje skrypt 3.4.1.slim.min.js, ale tutaj musze jeszcze raz, bo
     inaczej summer note nie dziala. W sensie jak nie dam tutaj i w szkielet.html to summernote nie dziala :(-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
