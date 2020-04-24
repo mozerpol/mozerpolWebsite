@@ -3,6 +3,13 @@
 {% block headForCategories %}
     <link rel="stylesheet" type="text/css" 
     href="{{ url_for('static', filename='managamentPageStyle.css') }}">
+    <!-- trzy ponizsze skrypty sa dla summernote. Ogolnie mega dziwna sprawa i taka srednia ;/ Bo w szkielet.html juz laduje skrypt 3.4.1.slim.min.js, ale tutaj musze jeszcze raz, bo
+    inaczej summer note nie dziala. W sensie jak nie dam tutaj i w szkielet.html to summernote nie dziala :(-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+    crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
 	<script type="text/javascript">
     function showDiv(id) 
     { 
@@ -22,12 +29,49 @@
 
 {% block articleContent %}
 <div class="row" style="color: white;">
-    
     <button onclick="showDiv('addArticle')" class="col-xl-12">Dodaj artykul</button>
     <div id="addArticle" style="display:none; color: white;"> 
-	    1. tytul <br>
-	    2. data <br>
-	    3. tagi/kategoria <br>
+	    <form class="row">
+            <input class="form-control col-xl-6 col-lg-6 col-md-6 col-sm-5 col-10" style="margin-top: 2%;" placeholder="Tytul...">
+            <input class="form-control col-xl-6 col-lg-6 col-md-6 col-sm-5 col-10" placeholder="Data...">
+            
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Elektronika </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Jedzenie </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Piwo </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Elektronika </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Jedzenie </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Piwo </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Elektronika </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Jedzenie </label>
+            <label class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6"><input type="checkbox"> Piwo </label>
+        </form>
+        <div class="row">  
+            <div id="summernote" class="col-xl-11"></div>
+			    <script>
+			        var x = screen.width; 
+                    $('#summernote').summernote({
+                        tabsize: 6,
+                        height: 300,
+                        width: x*0.6,   // set screenWidth*0.6 = 60%
+                        minHeight: null,             // set minimum height of editor
+                        maxHeight: null,             // set maximum height of editor
+                        focus: true,                  // set focus to editable area after initializing summernote
+
+                        toolbar: [
+                            // [groupName, [list of button]]. Wiecej: https://summernote.org/deep-dive/
+                            ['style', ['bold', 'italic', 'underline', 'strikethrough']],
+                            ['font', ['superscript', 'subscript']],
+                            ['fontname', ['fontname']],
+                            ['fontsize', ['fontsize']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['insert', ['link', 'picture', 'video']],
+                            ['view', ['fullscreen']],
+                        ]
+                    });
+			    </script>
+            <div style="margin-top: 4%; text-align: center;width: 100%;"> <button class="w3-button col-1">WYŚLIJ</button></div>
+        </div>
 	</div> <!-- koniec addArticle -->
     <button onclick="showDiv('lastComment')" class="col-xl-12">Komentarze</button>
     <div id="lastComment" style="display:none; color: white;"> 
@@ -39,12 +83,13 @@
         1. statystyki dot. kazdego z osobna artykulu (ile odwiedzin, komentarzy itp.) <br>
         2. lacznie wejsc na strone <br>
 	</div> <!-- koniec checkStats -->        
-	<button onclick="showDiv('users')" class="col-xl-12">Uzytkownicy</button>
+	<button onclick="showDiv('users')" class="col-xl-12">Uzytkownicy i tagi</button>
     <div id="users" style="display:none; color: white;"> 
         1. zablokuj IP <br>
         2. lista blokowanych adresow <br>
 		3. nazwa uzytkownika <br>
         4. uprawnienia uzytkownika <br>
+        5. dodaj tagi <br>
 	</div> <!-- koniec checkStats -->  
 </div> <!-- koniec row -->
 {% endblock %}
